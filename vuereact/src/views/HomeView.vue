@@ -2,31 +2,29 @@
   <main>
     <TheWelcome />
   </main>
-  <div class="home">
-    <h1 v-if="graduated">{{ student }}</h1>
+  <div class="Home">
+    <!--  <h1 v-if="graduated">{{ student }}</h1>
     <h1 v-else>"They did not yet graduate"</h1>
     <ul>
       <li v-for="animal in animals" :key="animal">{{ animal }}</li>
-    </ul>
-    <button v-if="loggedIn">Log Out</button>
-    <button v-else>Login</button>
+    </ul> -->
+    <button v-on:click="authState" v-if="loggedIn">Log Out</button>
+    <button v-on:click="authState" v-else>Login</button>
   </div>
 </template>
 
-<script setup>
-import TheWelcome from "../components/TheWelcome.vue";
-</script>
-
 <script>
+import TheWelcome from "../components/TheWelcome.vue";
+
 export default {
   name: "Home",
   components: {},
   data() {
     return {
-      loggedIn: true,
-      student: "Harry",
+      loggedIn: false,
+      /*    student: "Harry",
       graduated: true,
-      animals: ["Pig", "Horse", "Donkey", "Cow", "Duck"],
+      animals: ["Pig", "Horse", "Donkey", "Cow", "Duck"], */
     };
   },
   methods: {
