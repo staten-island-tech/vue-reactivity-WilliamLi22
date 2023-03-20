@@ -1,41 +1,23 @@
 <template>
-  <main>
-    <TheWelcome />
-  </main>
-  <div class="Home">
-    <!--  <h1 v-if="graduated">{{ student }}</h1>
-    <h1 v-else>"They did not yet graduate"</h1>
-    <ul>
-      <li v-for="animal in animals" :key="animal">{{ animal }}</li>
-    </ul> -->
-    <button v-on:click="authState" v-if="loggedIn">Log Out</button>
-    <button v-on:click="authState" v-else>Login</button>
+  <NotWelcome />
+  <div class="home">
+    <input type="text" placeholder="Edit Me" />
+    <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
-import TheWelcome from "../components/TheWelcome.vue";
+import NotWelcome from "../components/NotWelcome.vue";
 
 export default {
   name: "Home",
   components: {},
   data() {
     return {
-      loggedIn: false,
-      /*    student: "Harry",
-      graduated: true,
-      animals: ["Pig", "Horse", "Donkey", "Cow", "Duck"], */
+      message: "",
     };
   },
-  methods: {
-    authState: function () {
-      if (this.loggedIn === false) {
-        this.loggedIn === true;
-      } else {
-        this.loggedIn = false;
-      }
-    },
-  },
+  methods: {},
 };
 </script>
 
