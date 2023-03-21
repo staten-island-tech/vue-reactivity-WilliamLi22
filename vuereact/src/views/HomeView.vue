@@ -1,27 +1,34 @@
+<!-- <NotWelcome /> -->
 <template>
-  <NotWelcome />
   <div class="home">
-    <input type="text" placeholder="Edit Me" />
-    <p>{{ message }}</p>
+    <h2>{{ now }}</h2>
   </div>
 </template>
 
-<script>
+<!-- <script setup>
 import NotWelcome from "../components/NotWelcome.vue";
+</script> -->
 
+<script>
+import Button from "../components/Button.vue";
 export default {
-  name: "Home",
-  components: {},
+  name: "home",
+  components: {
+    Button,
+  },
   data() {
     return {
       message: "",
     };
+  },
+  computed: {
+    now: function () {
+      const time = new Date();
+      return `${time.getHours()}:${time.getMinutes()}`;
+    },
   },
   methods: {},
 };
 </script>
 
 <style scoped></style>
-<!-- scoped makes it so that in this case, the style only applies to this file v-base
-creates template
- -->
