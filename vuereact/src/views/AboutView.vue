@@ -1,8 +1,11 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>Ingredients in your sandwich</h1>
+    <div></div>
   </div>
 </template>
+
+<script></script>
 
 <style>
 @media (min-width: 1024px) {

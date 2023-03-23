@@ -1,10 +1,11 @@
 <!-- <NotWelcome /> -->
 <template>
-  <div class="home"></div>
-  <li v-for="ingredients in ingredients" :key="ingredients">
-    {{ ingredients }}
-  </li>
-  <button v-for="ingredients in ingredients" :key="ingredients"></button>
+  <div class="home" v-for="ingredients in ingredients">
+    <li :key="ingredients">
+      {{ ingredients }}
+    </li>
+    <button @click="authState" :key="ingredients">Add to Sandwich</button>
+  </div>
 </template>
 
 <!-- <script setup>
@@ -17,7 +18,6 @@ export default {
   components: {},
   data() {
     return {
-      message: "",
       ingredients: [
         "Lettuce $1",
         "Shredded Mozzarella $2",
@@ -35,7 +35,11 @@ export default {
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    authState: function name() {
+      console.log();
+    },
+  },
 };
 </script>
 
