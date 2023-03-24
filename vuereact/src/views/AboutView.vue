@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Ingredients in your sandwich</h1>
+    <h1>Ingredients in your sandwich:</h1>
     <div></div>
   </div>
 </template>

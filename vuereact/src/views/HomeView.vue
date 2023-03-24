@@ -4,7 +4,7 @@
     <li :key="ingredients">
       {{ ingredients }}
     </li>
-    <button @click="authState" :key="ingredients">Add to Sandwich</button>
+    <Button @click="authState" :key="ingredients">Add to Sandwich</Button>
   </div>
 </template>
 
@@ -37,7 +37,7 @@ export default {
   computed: {},
   methods: {
     authState: function name() {
-      console.log();
+      console.log("E");
     },
   },
 };
