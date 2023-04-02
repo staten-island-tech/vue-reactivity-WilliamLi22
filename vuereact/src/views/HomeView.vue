@@ -1,13 +1,13 @@
 <!-- <NotWelcome /> -->
 <template>
-  <div class="home" v-for="ingredients in ingredients">
-    <li :key="ingredients">
-      {{ ingredients }}
-    </li>
+  <div v-for="ingredient in ingredients" :key="ingredient.name">
+    <h3>{{ ingredient.name }}</h3>
+    <p>Type: {{ ingredient.type }}</p>
+    <img :src="ingredient.image" :alt="ingredient.name" />
+    <p>Price: ${{ ingredient.price }}</p>
     <Button @click="authState" :key="ingredients">Add to Sandwich</Button>
   </div>
 </template>
-
 <!-- <script setup>
 import NotWelcome from "../components/NotWelcome.vue";
 </script> -->
@@ -44,21 +44,51 @@ export default {
           name: "Cucumber",
           type: "Vegetable",
           image:
-            "https://t3.ftcdn.net/jpg/03/24/22/42360_F_324224284_KEgkz9bGAROme3X5j9k3ddwiHm3BE2IO.jpg",
+            "https://th.bing.com/th/id/R.f5e61e24242113915155574adc773fb7?rik=LU%2bjr1pbVa93Mg&riu=http%3a%2f%2ffreefoodphotos.com%2fimagelibrary%2fvegetables%2fsliced_cucumber.jpg&ehk=%2batsY09ztjW%2fSbnFl5aFpu3MXzsqQFxXOSE%2bqfg7Ig4%3d&risl=&pid=ImgRaw&r=0",
           price: 1,
         },
         {
           name: "Tomato",
           type: "Vegetable",
           image:
-            "https://s3.envato.com/files/3254570842019_09_Victor_food_IMG_0072-2-Edit_20190513.jpg",
+            "https://th.bing.com/th/id/OIP.A3KtH1IjV8MfpZ2CP6s9tgHaHa?pid=ImgDet&rs=1",
           price: 1,
         },
-        "Bacon $3",
-        "Meatballs $3",
-        "Grilled Chicken $3",
-        "Ham $3",
-        "Steak $4",
+        {
+          name: "Bacon",
+          type: "Meat",
+          image:
+            "https://th.bing.com/th/id/OIP.8R1sTsu1fl2W1FbslA52aAHaFI?pid=ImgDet&rs=1",
+          price: 3,
+        },
+        {
+          name: "Meatballs",
+          type: "Meat",
+          image:
+            "https://thumbs.dreamstime.com/b/baked-homemade-meatballs-isolated-white-background-baked-homemade-meatballs-194260878.jpg",
+          price: 3,
+        },
+        {
+          name: "Chicken",
+          type: "Meat",
+          image:
+            "https://media.istockphoto.com/photos/heap-of-pulled-chicken-meat-on-white-picture-id1221237582?k=20&m=1221237582&s=612x612&w=0&h=jNogYAgk6nDGjpJNca36Zpeaby_BEgA8zCS1ovZfov0=",
+          price: 3,
+        },
+        {
+          name: "Ham",
+          type: "Meat",
+          image:
+            "https://thumbs.dreamstime.com/b/sliced-ham-white-background-pork-ham-sliced-white-backgro-sliced-ham-white-background-pork-ham-sliced-white-background-127407650.jpg",
+          price: 3,
+        },
+        {
+          name: "Steak",
+          type: "Meat",
+          image:
+            "https://thumbs.dreamstime.com/b/rare-beef-fillet-steak-sliced-white-background-chargrilled-33625288.jpg",
+          price: 4,
+        },
         {
           name: "Shredded Mozzarella",
           type: "Dairy Product",
