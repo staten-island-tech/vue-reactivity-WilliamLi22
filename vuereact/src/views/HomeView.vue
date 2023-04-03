@@ -3,7 +3,12 @@
   <div v-for="ingredient in ingredients" :key="ingredient.name">
     <h3>{{ ingredient.name }}</h3>
     <p>Type: {{ ingredient.type }}</p>
-    <img :src="ingredient.image" :alt="ingredient.name" />
+    <img
+      :src="ingredient.image"
+      :alt="ingredient.name"
+      width="210"
+      height="200"
+    />
     <p>Price: ${{ ingredient.price }}</p>
     <Button @click="authState" :key="ingredients">Add to Sandwich</Button>
   </div>
@@ -115,4 +120,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+img {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
