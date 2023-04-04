@@ -4,6 +4,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
+  <h1>Sandwish Maker</h1>
   <header>
     <div class="wrapper">
       <nav>

@@ -10,7 +10,7 @@
       height="200"
     />
     <p>Price: ${{ ingredient.price }}</p>
-    <Button @click="authState" :key="ingredients">Add to Sandwich</Button>
+    <Button @click="order" :key="ingredients">Add to Sandwich</Button>
   </div>
 </template>
 <!-- <script setup>
@@ -18,11 +18,17 @@ import NotWelcome from "../components/NotWelcome.vue";
 </script> -->
 
 <script>
+import { store } from "../components/store.js";
+import Card from "../components/card.vue";
 export default {
   name: "home",
-  components: {},
+  components: {
+    store,
+    Card,
+  },
   data() {
     return {
+      selected: "",
       ingredients: [
         {
           name: "Plain Roll",
@@ -112,9 +118,20 @@ export default {
     };
   },
   computed: {},
-  methods: {
+  /*  methods: {
     authState: function name() {
       console.log("E");
+    },
+  },
+}; */
+  methods: {
+    order: function () {
+      store.order.push({
+        name: this.name,
+        type: this.type,
+        image: this.image,
+        price: this.price,
+      });
     },
   },
 };
