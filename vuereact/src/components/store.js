@@ -1,5 +1,3 @@
 import { reactive } from "vue";
 
-export const store = reactive({
-  order: [],
-});
+export const store = reactive({});

@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      selected: "",
+      selected: [], 
       ingredients: [
         {
           name: "Plain Roll",
