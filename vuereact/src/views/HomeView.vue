@@ -1,6 +1,6 @@
 <!-- <NotWelcome /> -->
 <template>
-  <div v-for="ingredient in ingredients" :key="ingredient.name">
+  <!-- <div v-for="ingredient in ingredients" :key="ingredient.name">
     <h3>{{ ingredient.name }}</h3>
     <p>Type: {{ ingredient.type }}</p>
     <img
@@ -11,7 +11,15 @@
     />
     <p>Price: ${{ ingredient.price }}</p>
     <Button @click="order" :key="ingredients">Add to Sandwich</Button>
-  </div>
+  </div> -->
+  <Card
+    v-for="ingredient in ingredients"
+    :key="ingredient.name"
+    :name="ingredient.name"
+    :type="ingredient.type"
+    :image="ingredient.image"
+    :price="ingredient.price"
+  />
 </template>
 <!-- <script setup>
 import NotWelcome from "../components/NotWelcome.vue";
@@ -22,13 +30,19 @@ import { store } from "../components/store.js";
 import Card from "../components/card.vue";
 export default {
   name: "home",
+  props: {
+    name: String,
+    type: String,
+    image: String,
+    price: Number,
+  },
   components: {
     store,
     Card,
   },
   data() {
     return {
-      selected: [], 
+      selected: [],
       ingredients: [
         {
           name: "Plain Roll",
@@ -118,12 +132,6 @@ export default {
     };
   },
   computed: {},
-  /*  methods: {
-    authState: function name() {
-      console.log("E");
-    },
-  },
-}; */
   methods: {
     order: function () {
       store.order.push({
@@ -137,9 +145,4 @@ export default {
 };
 </script>
 
-<style scoped>
-img {
-  display: flex;
-  flex-wrap: wrap;
-}
-</style>
+<style></style>

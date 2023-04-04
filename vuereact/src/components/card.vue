@@ -14,9 +14,20 @@ export default {
     name: String,
     type: String,
     image: String,
-    price: String,
+    price: Number,
+  },
+  computed: {
+    getImage: function () {
+      return this.image;
+    },
   },
 };
 </script>
 
-<style scoped></style>
+<style>
+.card {
+  width: 30%;
+  height: 300px;
+  margin: 10px auto;
+}
+</style>
