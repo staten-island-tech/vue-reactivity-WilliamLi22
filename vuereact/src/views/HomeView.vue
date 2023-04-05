@@ -42,7 +42,6 @@ export default {
   },
   data() {
     return {
-      selected: [],
       ingredients: [
         {
           name: "Plain Roll",
@@ -132,16 +131,6 @@ export default {
     };
   },
   computed: {},
-  methods: {
-    order: function () {
-      store.order.push({
-        name: this.name,
-        type: this.type,
-        image: this.image,
-        price: this.price,
-      });
-    },
-  },
 };
 </script>
 

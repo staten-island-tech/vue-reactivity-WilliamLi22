@@ -2,20 +2,9 @@
   <div>
     <h2>{{ name }}</h2>
     <h2>{{ type }}</h2>
-    <img class="img" :src="image" alt="" />
+    <img :src="image" alt="" />
     <h2>{{ price }}</h2>
-    <button
-      @click="
-        order({
-          name: name,
-          type: type,
-          image: image,
-          price: price,
-        })
-      "
-    >
-      Add to cart
-    </button>
+    <button @click="Remove(name)">Add to cart</button>
   </div>
 </template>
 
@@ -36,8 +25,9 @@ export default {
     },
   },
   methods: {
-    order: function (object) {
-      selected.push(object);
+    Remove: function (object) {
+      let item = selected.find((item) => item.ingredient === object);
+      selected.splice(item, 1);
       console.log(selected);
     },
   },
@@ -49,11 +39,5 @@ export default {
   width: 30%;
   height: 300px;
   margin: 10px auto;
-  flex-wrap: wrap;
-}
-.img {
-  height: 20%;
-  width: 25%;
-  object-fit: cover;
 }
 </style>
