@@ -40,4 +40,9 @@ export default {
   height: 300px;
   margin: 10px auto;
 }
+.img {
+  height: 20%;
+  width: 25%;
+  object-fit: cover;
+}
 </style>
